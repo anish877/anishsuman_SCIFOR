@@ -1,5 +1,0 @@
-What is HTML?
-HTML (HyperText Markup Language) is a markup language used to create web pages.It is a combination of Hypertext and Markup language.
-
-What are HTML Tags?
-HTML Tags are used to define the structure, content and elements of the webpage.
