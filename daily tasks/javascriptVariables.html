@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="x">x: 
+    </h1>
+    <h1 id="y">y: </h1>
+    <h1 id="a">a: </h1>
+    <h1 id="b">b: </h1>
+    <script>
+        var x =10
+        const y = 20
+    document.getElementById('x').innerHTML += x
+    document.getElementById('y').innerHTML += y
+    {
+        var a = 10
+    }
+    document.getElementById('a').innerHTML += a // since var has global scope
+    {
+        const b= 20
+        document.getElementById('b').innerHTML += b // since const has block scope
+    }
+    </script>
+</body>
+
+</html>
