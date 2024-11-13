@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <label for="day">ENTER DAY TO CHECK :</label>
+        <input type="text" id="day">
+        <input type="submit" name="" id="">
+    </form>
+    <h1 id="heading"></h1>
+    <script>
+        document.getElementById("form").onsubmit=(e)=>{
+            e.preventDefault()
+            const day  = document.getElementById("day").value
+            switch (day) {
+                case "monday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                case "tuesday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                case "wednesday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                case "thursday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                case "friday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                case "saturday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                case "sunday":
+                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
+                break;
+                default:
+                    document.getElementById("heading").innerHTML = `ENTER A VALID DAY`
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
