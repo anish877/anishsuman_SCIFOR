@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <label for="input1">ENTER NUMBER 1:</label>
+        <input type="text" id="input1">
+        <label for="input2">ENTER NUMBER 2:</label>
+        <input type="text" id="input2">
+        <button type="submit" id="add" value="add">ADD</button>
+        <button type="submit" id="sub" value="sub">SUBTRACT</button>
+        <button type="submit" id="div" value="div">DIVIDE</button>
+        <button type="submit" id="multi" value="multi">MULTIPLICATION</button>
+    </form>
+    <h1 id="heading">RESULT: </h1>
+    <script>
+        document.getElementById('form').onsubmit = e=>{
+            e.preventDefault()
+            x = parseInt(document.getElementById('input1').value)
+            y = parseInt(document.getElementById('input2').value)
+            function add(x,y){
+                return x+y
+            }
+            function sub(x,y){
+                return x-y
+            }
+            function div(x,y){
+                return x/y
+            }
+            function multi(x,y){
+                return x*y
+            }
+            console.log(e.submitter.id)
+            if(e.submitter.id=="add"){
+                document.getElementById("heading").innerHTML += add(x,y)
+            }
+            if(e.submitter.id=="sub"){
+                document.getElementById("heading").innerHTML += sub(x,y)
+            }
+            if(e.submitter.id=="div"){
+                document.getElementById("heading").innerHTML += div(x,y)
+            }
+            if(e.submitter.id=="multi"){
+                document.getElementById("heading").innerHTML += multi(x,y)
+            }
+        }
+    </script>
+</body>
+</html>
