@@ -1,54 +1,166 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
+    <title>Enhanced Card Layout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Poppins', sans-serif;
+            color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            width: 300px;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        .btn-success {
+            background-color: #10b981;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: #059669;
+            transform: scale(1.05);
+        }
+
+        .btn-danger {
+            background-color: #e11d48;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #be123c;
+            transform: scale(1.05);
+        }
+
+        .btn-warning {
+            background-color: #f59e0b;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-warning:hover {
+            background-color: #d97706;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
   </head>
   <body>
-    <div style="display: flex; gap: 40px; height: 100vh; align-items: center; padding: 40px;">
-        <div class="card" style="width: 18rem;">
+    <div class="card-container">
+        <div class="card">
             <div class="card-header">Header</div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">THIS IS CARD 1</p>
-              <a href="#" class="btn btn-primary">BASIC CLICK</a>
+              <h5 class="card-title">Basic Card</h5>
+              <p class="card-text">This is a basic card.</p>
+              <a href="#" class="btn btn-primary">Basic Click</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-header">Header</div>
-            <div class="card-body bg-primary">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">THIS IS CARD 1</p>
-              <a href="#" class="btn btn-success">PRIMARY CLICK</a>
+            <div class="card-body bg-primary text-white">
+              <h5 class="card-title">Primary Card</h5>
+              <p class="card-text">This is a primary card.</p>
+              <a href="#" class="btn btn-success">Primary Click</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-header">Header</div>
-            <div class="card-body bg-success">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">THIS IS CARD 1</p>
-              <a href="#" class="btn btn-primary">SUCCESS CLICK</a>
+            <div class="card-body bg-success text-white">
+              <h5 class="card-title">Success Card</h5>
+              <p class="card-text">This is a success card.</p>
+              <a href="#" class="btn btn-primary">Success Click</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-header">Header</div>
-            <div class="card-body bg-danger">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">THIS IS CARD 1</p>
-              <a href="#" class="btn btn-primary">DANGER CLICK</a>
+            <div class="card-body bg-danger text-white">
+              <h5 class="card-title">Danger Card</h5>
+              <p class="card-text">This is a danger card.</p>
+              <a href="#" class="btn btn-primary">Danger Click</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-header">Header</div>
-            <div class="card-body bg-warning">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">THIS IS CARD 1</p>
-              <a href="#" class="btn btn-primary">WARNING CLICK</a>
+            <div class="card-body bg-warning text-dark">
+              <h5 class="card-title">Warning Card</h5>
+              <p class="card-text">This is a warning card.</p>
+              <a href="#" class="btn btn-primary">Warning Click</a>
             </div>
         </div>
     </div>
