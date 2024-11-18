@@ -5,35 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        table {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table thead {
+            background-color: #457b9d;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: rgba(240, 248, 255, 0.8);
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        table tbody tr:hover {
+            background-color: #a8dadc;
+            transition: background-color 0.3s ease;
+        }
+        }
+    </style>
 </head>
 <body>
     <table class="hover">
         <thead>
           <tr>
-            <th width="200">HEADING 1</th>
-            <th>HEADIN 2</th>
-            <th width="150">HEADIN 3</th>
-            <th width="150">HEADIN 4</th>
+            <th width="200">Heading 1</th>
+            <th>Heading 2</th>
+            <th width="150">Heading 3</th>
+            <th width="150">Heading 4</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Content</td>
-            <td>CONTENT</td>
-            <td>Content</td>
-            <td>Content</td>
+            <td>Content 1</td>
+            <td>Content 2</td>
+            <td>Content 3</td>
+            <td>Content 4</td>
           </tr>
           <tr>
-            <td>Content</td>
-            <td>CONTENT</td>
-            <td>Content</td>
-            <td>Content</td>
+            <td>Content A</td>
+            <td>Content B</td>
+            <td>Content C</td>
+            <td>Content D</td>
           </tr>
           <tr>
-            <td>Content</td>
-            <td>CONTENT</td>
-            <td>Content</td>
-            <td>Content</td>
+            <td>Data X</td>
+            <td>Data Y</td>
+            <td>Data Z</td>
+            <td>Data W</td>
           </tr>
         </tbody>
       </table>
