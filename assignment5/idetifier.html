@@ -4,30 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #32CD32;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #28a745;
+        }
+
+        #heading {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .positive {
+            color: green;
+        }
+
+        .negative {
+            color: red;
+        }
+
+        .zero {
+            color: blue;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            label {
+                font-size: 0.9rem;
+            }
+
+            input[type="text"], input[type="submit"] {
+                font-size: 0.9rem;
+            }
+
+            #heading {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form action="" id="form">
-        <label for="number">ENTER NUMBER TO CHAECK :</label>
-        <input type="text" id="number">
-        <input type="submit" name="" id="">
-    </form>
-    <h1 id="heading"></h1>
+    <div class="form-container">
+        <form id="form">
+            <label for="number">Enter a number to check:</label>
+            <input type="text" id="number" placeholder="Enter a number" aria-label="Enter number">
+            <input type="submit" value="Check Number">
+        </form>
+        <h1 id="heading" aria-live="polite"></h1>
+    </div>
+
     <script>
-        document.getElementById("form").onsubmit=(e)=>{
-            e.preventDefault()
-            var numberis
-            const number  = document.getElementById("number").value
-            if(number>0){
-                numberis='positive'
+        document.getElementById("form").onsubmit = (e) => {
+            e.preventDefault();
+
+            const numberInput = document.getElementById("number").value.trim();
+            const heading = document.getElementById("heading");
+            let resultClass = "";
+            let message = "";
+
+            if (isNaN(numberInput) || numberInput === "") {
+                message = "Please enter a valid number!";
+                resultClass = "error";
+            } else {
+                const number = parseFloat(numberInput); 
+                if (number > 0) {
+                    message = "The number is positive.";
+                    resultClass = "positive";
+                } else if (number < 0) {
+                    message = "The number is negative.";
+                    resultClass = "negative";
+                } else {
+                    message = "The number is zero.";
+                    resultClass = "zero";
+                }
             }
-            else if(number<0){
-                numberis = 'negative'
-            }
-            else{
-                numberis="zero"
-            }
-            document.getElementById("heading").innerHTML = `THE NUMBER IS ${numberis}`
-        }
+
+            heading.innerHTML = message;
+            heading.className = resultClass; 
+        };
     </script>
 </body>
 </html>
