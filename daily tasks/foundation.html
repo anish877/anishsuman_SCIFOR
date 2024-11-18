@@ -5,30 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .callout {
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .button {
+            margin: 10px 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="callout primary">
-        <h1>MAIN</h1>
-    </div>
+    <header>
+        <div class="callout primary">
+            <h1>Foundation UI</h1>
+        </div>
+    </header>
 
-    <div class="callout secondary">
-        <h1>SECONDARY</h1>
-    </div>
+    <main>
+        <div class="callout secondary">
+            <h1>Secondary Callout</h1>
+        </div>
 
-    <div class="callout success">
-        <h1>WINNING</h1>
-    </div>
+        <div class="callout success">
+            <h1>Success Callout</h1>
+        </div>
 
-    <div class="callout alert">
-        <h1>WARNING</h1>
-    </div>
+        <div class="callout alert">
+            <h1>Alert Callout</h1>
+        </div>
 
-    <a href="#" class="button">Simple Button</a>
-    <a href="#" class="button success">Winning Button</a>
-    <a href="#" class="button secondary">Button</a>
-    <a href="#" class="button alert">Warning Button</a>
-    <a href="#" class="button info">Info Button</a>
-    <a href="#" class="button disabled">Disabled Button</a>
+        <div class="grid-container text-center">
+            <a href="#" class="button">Simple Button</a>
+            <a href="#" class="button success">Winning Button</a>
+            <a href="#" class="button secondary">Secondary Button</a>
+            <a href="#" class="button alert">Warning Button</a>
+            <a href="#" class="button info">Info Button</a>
+            <a href="#" class="button disabled" aria-disabled="true">Disabled Button</a>
+        </div>
+    </main>\
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
     <script>
