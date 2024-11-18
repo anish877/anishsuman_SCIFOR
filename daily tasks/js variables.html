@@ -5,27 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             background-color: antiquewhite;
-            text-align: center;
             color: brown;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .detail {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <h1 id="name">NAME: </h1>
-    <h1 id="lname">LAST NAME: </h1>
-    <h1 id="email">EMAIL: </h1>
-    <h1 id="age">AGE: </h1>
-<script>
-    const name = 'ANISH'
-    let lname = 'SUMAN'
-    var email = 'anishsuman2305@gmail.com'
-    const age = '18'
-    document.getElementById('name').innerHTML += name 
-    document.getElementById('lname').innerHTML += lname 
-    document.getElementById('email').innerHTML += email 
-    document.getElementById('age').innerHTML += age 
-</script>
+    <div class="container" role="main">
+        <h1>User Details</h1>
+        <p class="detail" id="name">Name: </p>
+        <p class="detail" id="lname">Last Name: </p>
+        <p class="detail" id="email">Email: </p>
+        <p class="detail" id="age">Age: </p>
+    </div>
+
+    <script>
+        const name = 'Anish';
+        const lname = 'Suman';
+        const email = 'anishsuman2305@gmail.com';
+        const age = 18;
+        document.getElementById('name').innerHTML += `${name}`;
+        document.getElementById('lname').innerHTML += `${lname}`;
+        document.getElementById('email').innerHTML += `${email}`;
+        document.getElementById('age').innerHTML += `${age}`;
+    </script>
 </body>
 </html>
