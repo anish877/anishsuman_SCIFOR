@@ -4,45 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label, input, h1 {
+            margin: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+
     <form action="" id="form">
-        <label for="day">ENTER DAY TO CHECK :</label>
-        <input type="text" id="day">
-        <input type="submit" name="" id="">
+        <label for="day">Enter a Day to Check:</label>
+        <input type="text" id="day" placeholder="e.g., Monday" required>
+        <input type="submit" value="Check Day">
+        <button type="button" id="resetBtn">Clear</button>
     </form>
     <h1 id="heading"></h1>
+
     <script>
-        document.getElementById("form").onsubmit=(e)=>{
-            e.preventDefault()
-            const day  = document.getElementById("day").value
-            switch (day) {
-                case "monday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                case "tuesday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                case "wednesday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                case "thursday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                case "friday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                case "saturday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                case "sunday":
-                document.getElementById("heading").innerHTML = `THE DAY IS ${day}`
-                break;
-                default:
-                    document.getElementById("heading").innerHTML = `ENTER A VALID DAY`
-                    break;
+        document.getElementById("form").onsubmit = (e) => {
+            e.preventDefault();
+            const dayInput = document.getElementById("day").value.trim().toLowerCase();
+            const validDays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+            if (validDays.includes(dayInput)) {
+                document.getElementById("heading").innerHTML = `The day is ${capitalizeFirstLetter(dayInput)}.`;
+            } else {
+                document.getElementById("heading").innerHTML = "Enter a valid day of the week.";
             }
+        };
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
+        document.getElementById("resetBtn").onclick = () => {
+            document.getElementById("day").value = '';
+            document.getElementById("heading").innerHTML = '';
+        };
     </script>
+
 </body>
 </html>
