@@ -5,19 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #divstyling{
-            background-color: blue;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
-        #heading1{
-            background-color: yellow;
+
+        #heading1 {
+            background-color: #ffd700;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        #spanstyle{
-            color: red;
+
+        #heading1:hover {
+            transform: scale(1.05);
+            background-color: #ffeb3b;
+        }
+        #spanstyle {
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+        #divstyling {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #divstyling p {
+            margin: 0;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
-    <h1 id="heading1">heading <span id="spanstyle">3</span></h1>
-    <div id="divstyling"><p>this is a para</p></div>
+    <h1 id="heading1">Heading <span id="spanstyle">3</span></h1>
+    <div id="divstyling">
+        <p>This is a paragraph inside a styled div.</p>
+    </div>
 </body>
 </html>
