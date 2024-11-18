@@ -4,39 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            border: 5px solid burlywood;
+            background-color: #fdf5e6; 
+            padding: 20px;
+            gap: 20px; 
+            min-height: 100vh; 
+        }
+
+        .container div {
+            background-color: cadetblue;
+            color: chocolate;
+            font-size: 1.8rem;
+            text-align: center;
+            border: 3px solid greenyellow;
+            border-radius: 10px; 
+            flex-grow: 1; 
+            flex-shrink: 1; 
+            flex-basis: calc(25% - 40px); 
+            margin: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .container div:hover {
+            transform: scale(1.05); 
+            background-color: #3b9ca5; 
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-    .container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        border: 5px solid burlywood;
-        height: 500vh;
-    }
-    .container div{
-        background-color: cadetblue;
-        color: yellow;
-        font-size: 2rem;
-        border: 5px solid greenyellow;
-        color: chocolate;
-        text-align: center;
-        align-self: flex-start;
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 100px;  
-        order: 2;
-        margin: 50px;
-        padding: 50px;
-    }
-</style>
 <body>
-    <div class="container">
-        <div><p>DIV 1</p></div>
-        <div><p>DIV 2</p></div>
-        <div><p>DIV 3</p></div>
-        <div><p>DIV 4</p></div>
+    <div class="container" aria-label="Flexbox Container">
+        <div aria-label="First Division"><p>DIV 1</p></div>
+        <div aria-label="Second Division"><p>DIV 2</p></div>
+        <div aria-label="Third Division"><p>DIV 3</p></div>
+        <div aria-label="Fourth Division"><p>DIV 4</p></div>
     </div>
 </body>
 </html>
