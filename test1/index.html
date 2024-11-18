@@ -3,19 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML</title>
+    <title>Document</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #1e90ff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        color: #ff4500; 
+        margin-top: 20px;
+        transition: color 0.3s ease;
+      }
+
+      h3:hover {
+        color: #ff6347; 
+        cursor: pointer;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        text-align: justify;
+      }
+
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+      }
+    </style>
   </head>
   <body>
-    <h1>Test 1</h1>
-    <h3>What is HTML?</h3>
-    <p>
-      HTML (HyperText Markup Language) is a markup language used to create web
-      pages.It is a combination of Hypertext and Markup language.
-    </p>
-    <h3>What are HTML Tags?</h3>
-    <p>
-      HTML Tags are used to define the structure, content and elements of the
-      webpage.
-    </p>
+    <div class="content">
+      <h1>HTML Basics</h1>
+      <article>
+        <h3>What is HTML?</h3>
+        <p>
+          HTML (HyperText Markup Language) is the standard language for creating
+          web pages. It allows developers to structure and present content on
+          the World Wide Web. HTML is a combination of **Hypertext**, which
+          allows linking between pages, and **Markup Language**, which structures
+          the content.
+        </p>
+      </article>
+
+      <article>
+        <h3>What are HTML Tags?</h3>
+        <p>
+          HTML Tags are predefined elements used to structure the content of
+          web pages. Tags usually come in pairs: an opening tag (e.g.,
+          <code>&lt;h1&gt;</code>) and a closing tag (e.g.,
+          <code>&lt;/h1&gt;</code>). They define the type of content and
+          how it should be displayed.
+        </p>
+      </article>
+    </div>
+
   </body>
 </html>
