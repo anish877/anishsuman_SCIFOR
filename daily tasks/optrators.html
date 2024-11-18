@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="addtion">addtion = </h1>
-    <h1 id="subraction">subraction = </h1>
-    <h1 id="division">division = </h1>
-    <h1 id="multiplication">multiplication = </h1>
-    <h1 id="modulus">modulus = </h1>
-    <h1 id="increment">incremen = </h1>
-    <h1 id="decrement">decrement = </h1>
+    <h1 id="addition">Addition: </h1>
+    <h1 id="subtraction">Subtraction: </h1>
+    <h1 id="division">Division: </h1>
+    <h1 id="multiplication">Multiplication: </h1>
+    <h1 id="modulus">Modulus: </h1>
+    <h1 id="increment">Increment: </h1>
+    <h1 id="decrement">Decrement: </h1>
+
     <script>
-        var x = 10
-        var y = 20
-        document.getElementById('addtion').innerHTML += x+y
-        document.getElementById('subraction').innerHTML += x-y
-        document.getElementById('division').innerHTML += x/y
-        document.getElementById('multiplication').innerHTML += x*y
-        document.getElementById('modulus').innerHTML += x%y
-        document.getElementById('increment').innerHTML += x++
-        document.getElementById('decrement').innerHTML += y--
+        let x = 10;
+        let y = 20;
+
+        document.getElementById('addition').innerHTML += `${x + y}`;
+        document.getElementById('subtraction').innerHTML += `${x - y}`;
+        document.getElementById('division').innerHTML += `${x / y}`;
+        document.getElementById('multiplication').innerHTML += `${x * y}`;
+        document.getElementById('modulus').innerHTML += `${x % y}`;
+        document.getElementById('increment').innerHTML += `${++x}`;
+        document.getElementById('decrement').innerHTML += `${--y}`; 
     </script>
 </body>
 </html>
