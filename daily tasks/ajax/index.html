@@ -4,7 +4,9 @@
 
 <div id="index">
 <h1>AJAX DEAILY TASK</h1>
-<button type="button" onclick="loadDoc()">CLICK TO GET ABOUT ME</button>
+<div id="output">
+  <button type="button" onclick="loadDoc()">CLICK TO GET ABOUT ME</button>
+</div>
 </div>
 
 <script>
@@ -12,7 +14,7 @@ function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("index").innerHTML =
+      document.getElementById("output").innerHTML =
       this.responseText;
     }
   };
