@@ -1,27 +1,92 @@
 <!DOCTYPE html>
-<html>
-<body>
-
-<div id="index">
-<h1>AJAX DEAILY TASK</h1>
-<div id="output">
-  <button type="button" onclick="loadDoc()">CLICK TO GET ABOUT ME</button>
-</div>
-</div>
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("output").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "about.html", true);
-  xhttp.send();
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Daily Task</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-</script>
 
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+#index {
+    background: #ffffff;
+    color: #333;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+#index h1 {
+    font-size: 2rem;
+    color: #0066cc;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Button Styling */
+#index button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #0066cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#index button:hover {
+    background: #0056a3;
+    transform: scale(1.05);
+}
+
+/* Output Styling */
+#output {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+    </style>
+</head>
+<body>
+    <div id="index">
+        <h1>AJAX DAILY TASK</h1>
+        <div id="output">
+            <button type="button" onclick="loadDoc()">CLICK TO GET ABOUT ME</button>
+        </div>
+    </div>
+
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("output").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "about.html", true);
+            xhttp.send();
+        }
+    </script>
 </body>
 </html>
