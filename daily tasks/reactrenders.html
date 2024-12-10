@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Button Click Example</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+        }
+        #root {
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    function Display() {
+        const app = () => {
+            const heading = document.createElement('h1');
+            heading.textContent = "Hello, Heading!";
+            const para = document.createElement('p');
+            para.textContent = "Hello, this is a paragraph added dynamically.";
+            
+            const div = document.getElementById('dynamic-content');
+            div.innerHTML = '';
+            div.appendChild(heading);
+            div.appendChild(para);
+        };
+
+        return (
+            <div>
+                <button onClick={app}>Click Me!</button>
+                <div id="dynamic-content" style={{ marginTop: '20px' }}></div>
+            </div>
+        );
+    }
+
+    ReactDOM.render(<Display />, document.getElementById('root'));
+</script>
+</body>
+</html>
