@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Search</title>
-</head>
-<body>
-    <input type="text" id="search">
-    <button onclick="f1()">Search</button>
-    <div id="response"></div>
-    <script>
-        const f1 = async () => {
-            const search = document.getElementById("search").value;
-            const response = await fetch(`https://dummyjson.com/products/search?q=${search}`);
-            const data = await response.json();
-            const responseDiv = document.getElementById("response");
-            responseDiv.innerHTML = "";
-            data.products.forEach(product => {
-                const productDiv = document.createElement("div");
-                productDiv.textContent = `ID: ${product.id}, Title: ${product.title}, Price: ${product.price}`;
-                responseDiv.appendChild(productDiv);
-            });
-        };
-    </script>
-</body>
-</html>
+function manipulateArray(inputArray) {
+    inputArray.push("VOLVO");
+    
+    for (let i = 0; i < inputArray.length; i++) {
+        inputArray[i] = inputArray[i].toUpperCase();
+    }
+    
+    return inputArray;
+}
+manipulateArray("string1","string2","string4");
