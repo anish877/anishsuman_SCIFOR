@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js" integrity="sha512-hwn3VkniGkA47ynSrr5SH1IV5YYcw2UM+hk2WjrPy24u9zjc60cnGTMxQ9Qk2QzU7+N/9AoOGzN9E5X0aLIW0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js" integrity="sha512-ksLU7CxGS5h+OyrjAtUGoD8FZHEEAguagOsFVioGe9kc3Cd8zs2glZrCAfQ92ThEIH2zBtG54y6GHwLB1yIySw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js" integrity="sha512-DPOhfruJ2tAZeF2JkXkTH5RSuI4/+/r+u3wFCrIm8ZMPtcoO0UfrVVoeV4E9N0jCWePSqOqLUmkvH8XZLHDqPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const Form = ({ details }) => {
+        return (
+          <div>
+            <h1>{details.name}</h1>
+            <h2>{details.lname}</h2>
+            <p>Age: {details.age}</p>
+            <p>Email: {details.email}</p>
+            <p>City: {details.city}</p>
+          </div>
+        );
+      };
+
+      const App = () => {
+        const details = {
+          name: "Anish",
+          lname: "Suman",
+          age: 17,
+          email: "anishsuman2305@gmail.com",
+          city: "Jamshedpur",
+        };
+
+        return (
+          <div>
+            <Form details={details} />
+          </div>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
