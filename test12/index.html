@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Class Component</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script type="text/babel">
+    class UpdateStateComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          name: "Anish",
+          lname: "Suman",
+          age: 20,
+          tempName: "Anish",
+          tempLname: "Suman",
+          tempAge: 20
+        };
+      }
+
+      handleInputChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
+      };
+
+      handleButtonClick = () => {
+        this.setState({
+          name: this.state.tempName,
+          lname: this.state.tempLname,
+          age: this.state.tempAge
+        });
+      };
+
+      render() {
+        return (
+          <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h1>State Update Example</h1>
+            <div>
+              <label>
+                Name: 
+                <input 
+                  type="text" 
+                  name="tempName" 
+                  value={this.state.tempName} 
+                  onChange={this.handleInputChange} 
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Last Name: 
+                <input 
+                  type="text" 
+                  name="tempLname" 
+                  value={this.state.tempLname} 
+                  onChange={this.handleInputChange} 
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Age: 
+                <input 
+                  type="number" 
+                  name="tempAge" 
+                  value={this.state.tempAge} 
+                  onChange={this.handleInputChange} 
+                />
+              </label>
+            </div>
+            <button onClick={this.handleButtonClick} style={{ marginTop: "20px" }}>Update State</button>
+            <p>Name: {this.state.name}</p>
+            <p>Last Name: {this.state.lname}</p>
+            <p>Age: {this.state.age}</p>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<UpdateStateComponent />, document.getElementById('root'));
+  </script>
+</body>
+</html>
