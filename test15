@@ -1,0 +1,16 @@
+function transformString(input) {
+    // Convert the string to lowercase
+    const lowerCaseString = input.toLowerCase();
+
+    // Extract the substring from index 0 to 2
+    const subString = lowerCaseString.substring(0, 2);
+
+    // Convert the substring to uppercase
+    const upperCaseSubString = subString.toUpperCase();
+
+    return upperCaseSubString;
+}
+
+// Example usage
+const result = transformString("HelloWorld");
+console.log(result); // Outputs: "HE"
